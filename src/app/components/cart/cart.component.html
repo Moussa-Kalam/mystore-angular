@@ -1,1 +1,11 @@
-<p>cart works!</p>
+<form #form="ngForm" (ngSubmit)="submitForm()">
+    <input type="text" name="fullName" required minlength="3" placeholder="(minimum 3 characters)" [(ngModel)]="fullName">
+    <br>
+    <input type="text" name="address" required minlength="6" placeholder="(minimum 6 characters)" [(ngModel)]="address">
+    <br>
+    <input type="number" name="creditCardNumber" required minlength="16" placeholder="(16-digit number)" [(ngModel)]="creditCardNumber">
+    <br>
+    <p>We'll never share your payment details with anyone else.</p>
+    <br>
+    <button type="submit" [disabled]="form.invalid">Checkout</button>
+</form>
