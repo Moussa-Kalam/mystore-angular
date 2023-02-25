@@ -1,4 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cart',
@@ -11,18 +12,16 @@ address: string = '';
 creditCardNumber: number = 0o0;
 cartItems = [];
 
-  constructor() {}
+  constructor(private router: Router) {}
 
   ngOnInit(): void {
     
   }
 
+  
+
   submitForm(): void {
-    const checkoutForm = {
-      fullName: this.fullName,
-      address: this.address,
-      creditCardNumber: this.creditCardNumber
-    }
+    
   }
 
 }
