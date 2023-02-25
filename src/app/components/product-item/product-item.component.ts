@@ -22,4 +22,7 @@ export class ProductItemComponent implements OnInit{
     
   }
 
+  onClick(): void {
+    alert('Added to cart!')
+  }
 }
