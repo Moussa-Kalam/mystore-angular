@@ -11,7 +11,7 @@
   }
 
   a:hover {
-    color: black;
+    color: rgb(13, 4, 99);
   }
  
   .link-position {
@@ -24,5 +24,5 @@
   .link-position a:not(:last-child):after {
     content: " | ";
     margin-left: 5px;
-    margin-right: 5px;
+    margin-right: 8px;
   }

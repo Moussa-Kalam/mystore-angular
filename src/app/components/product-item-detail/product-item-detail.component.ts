@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Product } from 'src/app/models/product';
 import { ProductService } from 'src/app/services/product.service';
 import { ActivatedRoute } from '@angular/router';
+import { CartService } from 'src/app/services/cart.service';
 
 @Component({
   selector: 'app-product-item-detail',
@@ -13,7 +14,7 @@ productList: Product[] = [];
 product: Product;
 id: number = 0;
 
-  constructor(private productService: ProductService, private route: ActivatedRoute) { 
+  constructor(private productService: ProductService, private route: ActivatedRoute, private cartService: CartService) { 
     this.product = {
       id: 0,
       name: '',
@@ -36,4 +37,12 @@ id: number = 0;
   getProductById(productId: number): Product {
     return this.productList.filter(item => item.id === productId)[0];
   }
+
+  addToCart(product: Product): void {
+    this.cartService.addToCart(product);
+    alert('Added to cart!')
+  }
+
 }
+
+ 

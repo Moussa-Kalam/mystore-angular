@@ -43,3 +43,16 @@ img {
     justify-content: center;
     margin-top: 64px;
   }
+
+  button {
+    background: linear-gradient(to bottom, #33B5E5, #0a7ea8);
+    color: white;
+    border-radius: 5px;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+  }
+
+  button:hover {
+    opacity: 0.8;
+  }

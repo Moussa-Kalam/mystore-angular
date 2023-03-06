@@ -3,7 +3,7 @@
     <img class="product-image" src="{{ product.url }}" alt="Product image"><br>
   </a>
   <p>{{ product.name }}</p> 
-  <p>{{ product.price }}</p>
+  <p>${{ product.price }}</p>
   <select class="select-input" required>
       <option value="1" selected>1</option>
       <option value="2">2</option>
@@ -17,6 +17,6 @@
       <option value="10">10</option>
     </select> 
     <br>
-  <button>Add to cart</button>
+  <button (click)="addToCart(product)">Add to cart</button>
 </div> 
 <br>
