@@ -4,17 +4,17 @@
     <h3>{{ product.name }}</h3>
     <p>${{ product.price }}</p> 
     <p>{{ product.description }}</p>
-    <select required class="select-input">
-        <option value="1" selected>1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-        <option value="6">6</option>
-        <option value="7">7</option>
-        <option value="8">8</option>
-        <option value="9">9</option>
-        <option value="10">10</option>
+    <select required class="select-input" [(ngModel)]="quantity">
+        <option [ngValue]="1" selected>1</option>
+        <option [ngValue]="2">2</option>
+        <option [ngValue]="3">3</option>
+        <option [ngValue]="4">4</option>
+        <option [ngValue]="5">5</option>
+        <option [ngValue]="6">6</option>
+        <option [ngValue]="7">7</option>
+        <option [ngValue]="8">8</option>
+        <option [ngValue]="9">9</option>
+        <option [ngValue]="10">10</option>
     </select> 
       <br>
     <button (click)="addToCart(product)">Add to cart</button>

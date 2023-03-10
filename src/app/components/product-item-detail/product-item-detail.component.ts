@@ -13,6 +13,7 @@ export class ProductItemDetailComponent implements OnInit{
 productList: Product[] = [];
 product: Product;
 id: number = 0;
+quantity: number = 1;
 
   constructor(private productService: ProductService, private route: ActivatedRoute, private cartService: CartService) { 
     this.product = {
@@ -20,7 +21,8 @@ id: number = 0;
       name: '',
       price: 1.0,
       url: '',
-      description: ''
+      description: '',
+      quantity: 0
     }
   }
 
@@ -39,8 +41,9 @@ id: number = 0;
   }
 
   addToCart(product: Product): void {
-    this.cartService.addToCart(product);
-    alert('Added to cart!')
+    product.quantity = this.quantity
+    this.cartService.addToCart(product,);
+    alert('Added to cart!');
   }
 
 }

@@ -2,6 +2,7 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
 import { Product } from 'src/app/models/product';
 import { CartService } from 'src/app/services/cart.service';
+import { CartInfoService } from 'src/app/services/cart-info.service';
 
 @Component({
   selector: 'app-cart',
@@ -11,22 +12,32 @@ import { CartService } from 'src/app/services/cart.service';
 export class CartComponent implements OnInit{
 fullName: string = '';
 address: string = '';
-creditCardNumber: number = 0o0;
-cartItems: Product[] = [];
+creditCardNumber: string = '';
+total: number = 0;
 
-  constructor(private router: Router, private cartService: CartService) {}
+quantity: number = 1;
+cartProducts: Product[] = [];
+
+  constructor(
+    private router: Router, 
+    private cartService: CartService,
+    private cartInfoService: CartInfoService) {}
 
   ngOnInit(): void {
-    this.cartItems= this.cartService.getItems()
+    this.cartProducts= this.cartService.getProducts()
+
+    for (let product of this.cartProducts) {
+      let productTotal = product.price * product.quantity;
+      this.total += productTotal;
+    }
+    this.total = Math.round(this.total * 100) / 100;
   }
   
-  clearCart(): void {
-    this.cartService.clearCart();
-    this.cartItems = [];
-  }
 
   submitForm(): void {
-    
+    this.cartInfoService.fullName = this.fullName;
+    this.cartInfoService.total = this.total;
+    this.router.navigateByUrl('/order-success');
   }
 
 }

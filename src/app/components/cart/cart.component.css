@@ -56,3 +56,8 @@ img {
   button:hover {
     opacity: 0.8;
   }
+
+  .info {
+    color: rgb(54, 53, 53);
+    font-size: small;
+  }
