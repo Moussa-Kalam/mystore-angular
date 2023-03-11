@@ -2,7 +2,9 @@
 
 MyStore is an Angular Application that allows users to view a list of available products to purchase, add them to a shopping cart, and ultimately complete the checkout process. 
 
+![Screenshot from 2023-03-11 21-10-33](https://user-images.githubusercontent.com/101457312/224507441-fd66438e-74a8-484a-8ad8-2ab5ca840755.png)
 
+![image](https://user-images.githubusercontent.com/101457312/224507543-9d5b9716-aa49-4568-940e-3dacefdd633b.png)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.1.6.
 
