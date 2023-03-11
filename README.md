@@ -13,13 +13,17 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 ```
 git clone https://github.com/Moussa-Kalam/mystore-angular.git
 ```
-* Run `npm install` to install the required dependencies.
+
+* Navigate to the repository ``cd mystore_angular`
+
+* Run `npm install` at the root of your project to install the required dependencies.
 
 
 
 ## Development server
 
 * Run `ng serve` for a dev server. 
+
 * Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
 ## Design for user experience
