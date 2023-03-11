@@ -44,7 +44,6 @@ quantity: number = 1;
     product.quantity = this.quantity
     this.cartService.addToCart(product,);
     alert('Added to cart!');
-    this.quantity = 0;
   }
 
 }
