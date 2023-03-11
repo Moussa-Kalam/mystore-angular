@@ -15,7 +15,7 @@ address: string = '';
 creditCardNumber: string = '';
 total: number = 0;
 
-quantity: number = 1;
+quantity: number = 0;
 cartProducts: Product[] = [];
 
   constructor(
@@ -38,6 +38,23 @@ cartProducts: Product[] = [];
     this.cartInfoService.fullName = this.fullName;
     this.cartInfoService.total = this.total;
     this.router.navigateByUrl('/order-success');
+  }
+
+  onQuantityChange(): void {
+    this.total = 0;
+    for (let product of this.cartProducts) {
+      if(product.quantity == 0) {
+        const index = this.cartProducts.indexOf(product);
+        if (index !== -1) {
+          this.cartProducts.splice(index, 1);
+          alert(`The product ${product.name} has been removed form the cart.`)
+        }
+      }
+      let productTotal = product.price * product.quantity;
+      this.total += productTotal;
+    }
+    this.total = Math.round(this.total * 100) / 100;
+
   }
 
 }

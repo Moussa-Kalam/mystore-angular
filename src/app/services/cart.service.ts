@@ -22,6 +22,7 @@ export class CartService {
       if (item.name == product.name) {
         item.quantity += product.quantity
         return
+        
       }
     }
     this.productsInCart.push(product);

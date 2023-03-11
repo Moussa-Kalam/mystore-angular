@@ -31,6 +31,7 @@ export class ProductItemComponent implements OnInit{
     product.quantity = this.quantity
     this.cartService.addToCart(product,);
     alert('Added to cart!');
+    this.quantity = 1;
   }
 
 

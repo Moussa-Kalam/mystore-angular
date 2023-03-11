@@ -3,8 +3,8 @@
     <img src="{{ item.url }}" alt="Item image">
     <h3>{{ item.name }}</h3>
     <p>${{ item.price }}</p>
-    <label for="item-amount">Amount </label>
-    <input type="number" name="item-amount" id="item-amount" [(ngModel)]="item.quantity">
+    <label for="item-quantity">Quantity</label>
+    <input type="number" name="item-quantity" id="item-quantity" [(ngModel)]="item.quantity" (ngModelChange)="onQuantityChange()">
     <br> 
 </div>   
  
