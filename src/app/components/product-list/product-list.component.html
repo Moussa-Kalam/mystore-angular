@@ -1,3 +1,3 @@
 <div class="product-container">
-    <app-product-item *ngFor="let product of productList" [product]="product"></app-product-item>
+    <app-product-item *ngFor="let product of productList" [product]="product" (productAdded)="handleProductAdded($event)"></app-product-item>
 </div>

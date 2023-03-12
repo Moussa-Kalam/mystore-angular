@@ -17,16 +17,13 @@ export class CartService {
 
   // Add product to cart
   addToCart(product: Product): void {
-    for (let item of this.productsInCart) {
-      if (item.name == product.name) {
-        item.quantity += product.quantity
-        return
-        
-      }
+    const index = this.productsInCart.findIndex(item => item.id === product.id);
+    if (index !== -1) {
+      this.productsInCart[index].quantity = product.quantity;
+    } else {
+      this.productsInCart.push(product);
     }
-    this.productsInCart.push(product);
   }
-
 }
  
 
